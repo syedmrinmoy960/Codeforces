@@ -59,17 +59,40 @@ using namespace std;
 //              prime.pb(i);
 //          }
 //      }
-// }
 
 int main(){    
 ios::sync_with_stdio(0);
   cin.tie(0),cout.tie(0);
     
-//   vector<int> prime;
-//   sieve(1e6,prime);
-  int n;
-  cin>>n;
-  cout<<n*5<<endl;   
+  //vector<int> prime;
+  //sieve(1e6,prime);
+    int t;cin>>t;
+    while(t--){
+         string str;
+         cin>>str;
+         int i=0;
+       map<char,int>m1;
+
+      for(int i=0;i<str.length();i++){
+         m1[str[i]]++;
+      }
+      
+       for(;i<str.length();i++){
+          if(m1[str[i]]<=1){
+             break;
+          }
+          
+            m1[str[i]]--;
+          
+       }
+       for(;i<str.length();i++){
+           cout<<str[i];
+       }
+       cout<<endl;
+
+    }
+ 
+      
          
   return 0;
 }

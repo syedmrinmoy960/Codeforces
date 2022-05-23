@@ -64,12 +64,20 @@ using namespace std;
 int main(){    
 ios::sync_with_stdio(0);
   cin.tie(0),cout.tie(0);
-    
-//   vector<int> prime;
-//   sieve(1e6,prime);
-  int n;
-  cin>>n;
-  cout<<n*5<<endl;   
+     int t;
+     cin>>t;
+     while(t--){
+          string str;
+          cin>>str;
+          int len =str.length();
+          if(len>10){
+          cout<<str[0]<<len-2<<str[str.length()-1]<<endl;
+          }
+          else{
+              cout<<str<<endl;
+          }
+     }
+     
          
   return 0;
 }

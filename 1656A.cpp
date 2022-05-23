@@ -65,11 +65,24 @@ int main(){
 ios::sync_with_stdio(0);
   cin.tie(0),cout.tie(0);
     
-//   vector<int> prime;
-//   sieve(1e6,prime);
-  int n;
-  cin>>n;
-  cout<<n*5<<endl;   
+    ll t;cin>>t;
+    while(t--){
+         ll n ;cin>>n;
+
+         vector<pair<ll ,int>>res;
+         for(int i=0;i<n;i++){
+              int x;
+              cin>>x;
+              res.pb({x,i+1});
+
+         }
+         sort(res.begin(),res.end());
+
+     cout<<res[0].second<<" "<<res[n-1].second<<endl;
+    }
+             
+
+     
          
   return 0;
 }

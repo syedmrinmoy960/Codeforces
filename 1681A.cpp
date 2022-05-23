@@ -1,14 +1,14 @@
-/*In The Name Of ALLAH
-*Bismillahir Rahmanir Rahmin
-* @Author: Syed Yasir Shahriar
-     ID   : 19-40656-1
-     UNI   : AIUB 
-       DEPT : BSC,CSE
-{
-/*//*\//\//\//\//\//\//\//\//\//\//\//\//\//\//\//\//\//\*/
+//*In The Name Of ALLAH
+//*Bismillahir Rahmanir Rahmin
+//* @Author: Syed Yasir Shahriar
+//     ID   : 19-40656-1
+//     UNI   : AIUB 
+//       DEPT : BSC,CSE
+//{
+//*//*\//\//\//\//\//\//\//\//\//\//\//\//\//\//\//\//\//\*/
 //أعوذ بالله من الشيطان الرجيم
 //بسم الله الرحمن الرحيم
-/*//\//\//\//\//\//\//\//\//\//\//\//\//\//\//\//\//\//\*/
+//*//\//\//\//\//\//\//\//\//\//\//\//\//\//\//\//\//\//\*/
 #include<bits/stdc++.h>
 #define ll long long
 #define ld long double;
@@ -65,11 +65,37 @@ int main(){
 ios::sync_with_stdio(0);
   cin.tie(0),cout.tie(0);
     
-//   vector<int> prime;
-//   sieve(1e6,prime);
-  int n;
-  cin>>n;
-  cout<<n*5<<endl;   
+   int t;cin>>t;
+   while(t--){
+       int n, m;
+       cin >> n;
+       int al[n + 1];
+       for (int i = 0; i < n;i++){
+           cin >> al[i];
+       }
+       sort(al, al + n);
+       cin >> m;
+       int bo[m + 1];
+       for (int j = 0; j < m;j++){
+           cin >> bo[j];
+       }
+       sort(bo, bo + m);
+       int amax = al[n - 1];
+       int bmax = bo[m - 1];
+       if(amax==bmax){
+           cout << "Alice" << endl;
+           cout << "Bob" << endl;
+       }
+       else if(amax>bmax){
+           cout << "Alice" << endl;
+           cout << "Alice" << endl;
+       }
+       else{
+           cout << "Bob" << endl;
+           cout << "Bob" << endl;
+       }
+   }
+     
          
   return 0;
 }

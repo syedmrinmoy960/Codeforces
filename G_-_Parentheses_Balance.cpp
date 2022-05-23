@@ -60,16 +60,58 @@ using namespace std;
 //          }
 //      }
 // }
-
+bool ischeck(char c1,char c2){
+     if(c1=='(' && c2==')' || c1=='{' && c2=='}' || c1=='[' || c2==']'){
+          return true;
+     }
+     else {
+          return false;
+     }
+}
 int main(){    
 ios::sync_with_stdio(0);
   cin.tie(0),cout.tie(0);
-    
-//   vector<int> prime;
-//   sieve(1e6,prime);
-  int n;
-  cin>>n;
-  cout<<n*5<<endl;   
+   
+    int t;cin>>t;
+    while(t--){
+         string str;
+         cin>>str;
+         stack<char>s1;
+         bool ans=true;
+         for(auto u:str){
+            if(u=='(' || u=='{' || u=='['){
+                  s1.push(u);
+            } 
+            else{
+                if(s1.empty()){
+                      ans=false;
+                      break;
+                }
+                else{
+                     if(ischeck(s1.top(),u)){
+                           s1.pop();
+                     }
+                     else{
+                          ans=false;
+                          break;
+                     }
+                }
+            }
+              
+         }
+         if(!s1.empty()){
+              ans=false;
+              
+         }
+         if(ans){
+               cout<<"Yes"<<endl;
+         }
+
+         else{
+              cout<<"No"<<endl;
+         }
+    }
+     
          
   return 0;
 }

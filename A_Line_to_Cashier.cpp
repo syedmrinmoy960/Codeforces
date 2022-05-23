@@ -41,35 +41,49 @@ using namespace std;
 // int const mx = 1e6 + 1;
 // bitset<mx> vis;
 // sieve function :
-//  vector<bool>vis(1e6+1);
-// void sieve(int n,vector<int>&prime){
-//        // vector<bool>vis(n+1);
-//      for(int i=3;1ll*i*i<=n;i+=2){
-//          if(!vis[i]){
-//             for(int j=i*i;j<=n;j+=(i<<1)){
-//                 if(!vis[j]){
-//                     vis[j]=1; 
-//                 }
-//             }
-//          }
-//      }
-//      //prime.pb(2);
-//      for(int i=3;i<=n;i+=2){
+//   vector<bool>vis(1e6+1);
+//  void sieve(int n,vector<int>&prime){
+//         // vector<bool>vis(n+1);
+//       for(int i=3;1ll*i*i<=n;i+=2){
+//           if(!vis[i]){
+//              for(int j=i*i;j<=n;j+=(i<<1)){
+//                  if(!vis[j]){
+//                      vis[j]=1; 
+//                  }
+//              }
+//           }
+//       }
+//       prime.pb(2);
+//       for(int i=3;i<=n;i+=2){
 //          if(!vis[i]){
 //              prime.pb(i);
-//          }
-//      }
-// }
-
+//           }
+//       }
+const int inf = (int) 1e9, maxn = (int) 1e5 + 1;
 int main(){    
 ios::sync_with_stdio(0);
   cin.tie(0),cout.tie(0);
     
-//   vector<int> prime;
-//   sieve(1e6,prime);
-  int n;
+  //vector<int> prime;
+  //sieve(1e6,prime);
+  int n,res[maxn];
   cin>>n;
-  cout<<n*5<<endl;   
+  for(int i=0;i<n;i++){
+     cin>>res[i];
+  }
+  int ans=inf;
+  for (int j = 0; j < n; j++) {
+		int s = 0;
+		for (int i = 0; i < res[j]; i++) {
+			int q;
+			cin >> q;
+			s += 5 * q + 15;
+		}
+		ans = min(s, ans);
+	}	
+  cout<<ans<<endl;
+
+     
          
   return 0;
 }

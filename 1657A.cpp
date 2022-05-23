@@ -65,11 +65,27 @@ int main(){
 ios::sync_with_stdio(0);
   cin.tie(0),cout.tie(0);
     
-//   vector<int> prime;
-//   sieve(1e6,prime);
-  int n;
-  cin>>n;
-  cout<<n*5<<endl;   
+   int t; cin>>t;
+   while(t--){
+        int a,b; cin>>a>>b;
+        if(a==0 && b==0){
+             cout<<"0"<<endl;
+        }
+        else{
+            int res=(a*a)+(b*b);
+            int sq=sqrt(res);
+            if((sq*sq)==res){
+                 cout<<"1"<<endl;
+            }
+            else{
+                cout<<"2"<<endl;
+            }
+            
+        }
+      
+
+
+   }
          
   return 0;
 }

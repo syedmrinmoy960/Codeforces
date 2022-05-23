@@ -65,11 +65,34 @@ int main(){
 ios::sync_with_stdio(0);
   cin.tie(0),cout.tie(0);
     
-//   vector<int> prime;
-//   sieve(1e6,prime);
-  int n;
-  cin>>n;
-  cout<<n*5<<endl;   
+    int year; cin>>year;
+     bool res=false;
+     int ans=0;
+    if(year%40==0){
+        res=true;
+    }
+     else if(year%100==0){
+          res=false;
+     }
+     else if(year%4==0){
+         res=true;
+     }
+     else{
+        res=false;
+     }
+
+     if(res){
+          int val=(31+29+31+30+31+30+31+31);
+          ans=(256-val);
+          cout<<ans<<"."<<"09"<<"."<<year<<endl;
+
+     }
+     else{
+          int val=(31+28+31+30+31+30+31+31);
+          ans=(256-val);
+          cout<<ans<<"."<<"09"<<"."<<year<<endl;
+     }
+     
          
   return 0;
 }

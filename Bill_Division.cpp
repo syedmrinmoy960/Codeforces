@@ -65,11 +65,27 @@ int main(){
 ios::sync_with_stdio(0);
   cin.tie(0),cout.tie(0);
     
-//   vector<int> prime;
-//   sieve(1e6,prime);
-  int n;
-  cin>>n;
-  cout<<n*5<<endl;   
+    int n,k; cin>>n>>k;
+    int ar[n];
+    for(int i=0;i<n;i++){
+         cin>>ar[i];
+    }
+    int sum=0;
+    for(int i=0;i<n;i++){
+         if(i!=k){
+              sum+=ar[i];
+         }
+    }
+   int l;cin>>l;
+
+   if((sum/2)==l){
+        cout<<"Bon Appetit"<<endl;
+   }
+    else{
+        cout<<(l-(sum/2))<<endl;
+    }
+
+     
          
   return 0;
 }

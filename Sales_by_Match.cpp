@@ -65,11 +65,19 @@ int main(){
 ios::sync_with_stdio(0);
   cin.tie(0),cout.tie(0);
     
-//   vector<int> prime;
-//   sieve(1e6,prime);
-  int n;
-  cin>>n;
-  cout<<n*5<<endl;   
+   int n; cin>>n;
+   map<int,int>m1;
+   for(int i=0;i<n;i++){
+        int x; cin>>x;
+        m1[x]++;
+   }
+   int cnt=0;
+   for(auto u:m1){
+        cnt+=u.second/2;
+   }
+   cout<<cnt<<endl;
+ 
+     
          
   return 0;
 }

@@ -22,36 +22,33 @@
 #define pq  priority_queue <int>
 #define qq queue<ll>
 #define mod 1e9+7
-const int mix=1e6+10;
-int ar[(int)1e6];
+ int ar[(int)1e6];
 int pre[(int)1e6];
+
 using namespace std;   
 
 int main(){    
 ios::sync_with_stdio(0);
   cin.tie(0),cout.tie(0);
-    
-    int n;
-    cin>>n;
-    for(int i=0;i<n;i++){
-       cin>>ar[i];
-    }
- 
-    pre[0]=ar[0];
-    for(int i=1;i<n;i++){
-       pre[i]=pre[i-1]+ar[i];
-    }
-    // for(int i=0;i<n;i++){
-    //    cout<<pre[i]<<" ";
-    // }
-    int g, k;
-    cin >> g >> k;
-    if(g==0){
-        cout << pre[k] << endl;
-    }
-     else{
-         cout << (pre[k] - pre[g - 1]) << endl;
-     }
+   int n;
+   cin>>n;
+   for(int i=0;i<n;i++){
+         cin>>ar[i];
+   }
 
-    return 0;
+    pre[0] = ar[0];
+   for(int i=1;i<n;i++){ 
+        pre[i]=pre[i-1]+ar[i];
+   }
+   int g,k;
+   cin>>g>>k;
+   if(g==0){
+        cout<<pre[k];
+   }
+    else{
+        cout<<(pre[k]-pre[g])<<endl;
+    }
+     
+         
+  return 0;
 }

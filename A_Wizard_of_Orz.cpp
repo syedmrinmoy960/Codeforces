@@ -65,11 +65,25 @@ int main(){
 ios::sync_with_stdio(0);
   cin.tie(0),cout.tie(0);
     
-//   vector<int> prime;
-//   sieve(1e6,prime);
-  int n;
-  cin>>n;
-  cout<<n*5<<endl;   
+   int t; cin>>t;
+   while(t--){
+        int n; cin>>n;
+        if(n==1){
+             cout<<"9"<<endl;
+        }
+         else if(n==2){
+              cout<<"98"<<endl;
+         }
+         else if(n>=3){
+              cout<<"989";
+              for(int i=0;i<n-3;i++){
+                   cout<<i%10;
+              }
+                cout<<endl;
+         }
+         //cout<<endl;
+   }
+     
          
   return 0;
 }

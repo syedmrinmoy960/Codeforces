@@ -30,46 +30,24 @@ ll arr[mix];
 //ith bit on =(n|(1<<i))
 //check ith bit=(n&(1<<i))
 using namespace std;   
-// ll gcd(ll a,ll b){
-//     if(b==0)
-//       return a;
-//       else
-//         return gcd(b,a%b);
-// }
-
-// sieve function :
-// int const mx = 1e6 + 1;
-// bitset<mx> vis;
-// sieve function :
-//  vector<bool>vis(1e6+1);
-// void sieve(int n,vector<int>&prime){
-//        // vector<bool>vis(n+1);
-//      for(int i=3;1ll*i*i<=n;i+=2){
-//          if(!vis[i]){
-//             for(int j=i*i;j<=n;j+=(i<<1)){
-//                 if(!vis[j]){
-//                     vis[j]=1; 
-//                 }
-//             }
-//          }
-//      }
-//      //prime.pb(2);
-//      for(int i=3;i<=n;i+=2){
-//          if(!vis[i]){
-//              prime.pb(i);
-//          }
-//      }
-// }
-
+vector<int>res;
 int main(){    
 ios::sync_with_stdio(0);
   cin.tie(0),cout.tie(0);
     
-//   vector<int> prime;
-//   sieve(1e6,prime);
-  int n;
-  cin>>n;
-  cout<<n*5<<endl;   
+   int n;
+   cin>>n;
+   for(int i=0;i<n;i++){
+        int x;
+        cin>>x;
+        res.pb(x);
+   }
+   reverse(res.begin(),res.end());
+   for(auto u:res){
+        cout<<u<<" ";
+   }
+   cout<<endl;
+   
          
   return 0;
 }

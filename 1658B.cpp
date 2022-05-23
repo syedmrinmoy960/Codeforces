@@ -21,7 +21,7 @@
 #define st stack<ll>
 #define pq  priority_queue <int>
 #define qq queue<ll>
-#define mod 1e9+7
+#define mod 998244353
 const int mix=1e6+10;
 //const ld pii=acos(-1.0);
 ll arr[mix];
@@ -29,6 +29,7 @@ ll arr[mix];
 // int ans=__builtin_popcount(n);
 //ith bit on =(n|(1<<i))
 //check ith bit=(n&(1<<i))
+
 using namespace std;   
 // ll gcd(ll a,ll b){
 //     if(b==0)
@@ -60,16 +61,34 @@ using namespace std;
 //          }
 //      }
 // }
-
+ll solve(ll n){
+    
+    ll res=1;
+    for(int i=1;i<=n;i++){
+         res=(res*i)%mod;
+    }
+    return res;
+}
 int main(){    
 ios::sync_with_stdio(0);
   cin.tie(0),cout.tie(0);
     
-//   vector<int> prime;
-//   sieve(1e6,prime);
-  int n;
-  cin>>n;
-  cout<<n*5<<endl;   
+   int t;
+   cin>>t;
+   while(t--){
+        ll n,ans=0;
+        cin>>n;
+        if(n&1){
+            cout<<"0"<<endl;
+             continue;
+        }
+        else{
+
+             ans=(solve(n/2)%mod * solve(n/2))%mod;
+        }
+        cout<<ans<<endl;
+   }
+     
          
   return 0;
 }

@@ -41,35 +41,39 @@ using namespace std;
 // int const mx = 1e6 + 1;
 // bitset<mx> vis;
 // sieve function :
-//  vector<bool>vis(1e6+1);
-// void sieve(int n,vector<int>&prime){
-//        // vector<bool>vis(n+1);
-//      for(int i=3;1ll*i*i<=n;i+=2){
-//          if(!vis[i]){
-//             for(int j=i*i;j<=n;j+=(i<<1)){
-//                 if(!vis[j]){
-//                     vis[j]=1; 
-//                 }
-//             }
-//          }
-//      }
-//      //prime.pb(2);
-//      for(int i=3;i<=n;i+=2){
+//   vector<bool>vis(1e6+1);
+//  void sieve(int n,vector<int>&prime){
+//         // vector<bool>vis(n+1);
+//       for(int i=3;1ll*i*i<=n;i+=2){
+//           if(!vis[i]){
+//              for(int j=i*i;j<=n;j+=(i<<1)){
+//                  if(!vis[j]){
+//                      vis[j]=1; 
+//                  }
+//              }
+//           }
+//       }
+//       //prime.pb(2);
+//       for(int i=3;i<=n;i+=2){
 //          if(!vis[i]){
 //              prime.pb(i);
-//          }
-//      }
+//           }
+//       }
 // }
 
 int main(){    
 ios::sync_with_stdio(0);
   cin.tie(0),cout.tie(0);
-    
-//   vector<int> prime;
-//   sieve(1e6,prime);
-  int n;
-  cin>>n;
-  cout<<n*5<<endl;   
+     ll n,m,sum=0,initial=1;
+      cin>>n>>m;
+     for(int i=0;i<m;i++){
+          ll x;
+          cin>>x;
+          sum+=((x-initial+n)%n);
+          initial =x;
+
+     }
+     cout<<sum<<endl;
          
   return 0;
 }

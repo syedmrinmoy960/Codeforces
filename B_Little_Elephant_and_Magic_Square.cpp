@@ -67,9 +67,13 @@ ios::sync_with_stdio(0);
     
 //   vector<int> prime;
 //   sieve(1e6,prime);
-  int n;
-  cin>>n;
-  cout<<n*5<<endl;   
+    int a,b,c,d,e,f,g,h,i;
+    cin>>a>>b>>c>>d>>e>>f>>g>>h>>i;
+
+    cout<<(f+h)/2<<" "<<b<<" "<<c<<endl;
+    cout<<d<<" "<<(d+f)/2<<" "<<f<<endl;
+    cout<<g<<" "<<h<<" "<<(b+d)/2<<endl;
+     
          
   return 0;
 }

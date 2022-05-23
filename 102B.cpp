@@ -65,11 +65,10 @@ int main(){
 ios::sync_with_stdio(0);
   cin.tie(0),cout.tie(0);
     
-//   vector<int> prime;
-//   sieve(1e6,prime);
-  int n;
-  cin>>n;
-  cout<<n*5<<endl;   
+  ll n;cin>>n;
+  ll res=n;
+  while(res!=1)
+     
          
   return 0;
 }

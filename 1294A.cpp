@@ -65,11 +65,23 @@ int main(){
 ios::sync_with_stdio(0);
   cin.tie(0),cout.tie(0);
     
-//   vector<int> prime;
-//   sieve(1e6,prime);
-  int n;
-  cin>>n;
-  cout<<n*5<<endl;   
+   ll t;
+   cin>>t;
+   while(t--){
+
+        ll a,b,c,n;
+        cin>>a>>b>>c>>n;
+        ll res=(a+b+c+n);
+         int mx=max({a,b,c});
+         if(res%3==0 and mx<=(res/3)){
+              cout<<"YES"<<endl;
+         }
+
+          else{
+               cout<<"NO"<<endl;
+          }
+   }
+     
          
   return 0;
 }

@@ -65,11 +65,24 @@ int main(){
 ios::sync_with_stdio(0);
   cin.tie(0),cout.tie(0);
     
-//   vector<int> prime;
-//   sieve(1e6,prime);
-  int n;
-  cin>>n;
-  cout<<n*5<<endl;   
+   string str;
+   cin>>str;
+   string ans="";
+   int len=str.length();
+    for(int i=0;i<len;i++){
+         if(str[i]=='-' && str[i+1]=='-'){
+              ans+='2';
+              i++;
+         }
+         else if(str[i]=='-' && str[i+1]=='.'){
+              ans+='1';
+              i++;
+         }
+         else{
+             ans+='0';
+         }
+    }
+    cout<<ans<<endl;
          
   return 0;
 }

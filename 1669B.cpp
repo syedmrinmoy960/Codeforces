@@ -1,14 +1,14 @@
-/*In The Name Of ALLAH
-*Bismillahir Rahmanir Rahmin
-* @Author: Syed Yasir Shahriar
-     ID   : 19-40656-1
-     UNI   : AIUB 
-       DEPT : BSC,CSE
-{
-/*//*\//\//\//\//\//\//\//\//\//\//\//\//\//\//\//\//\//\*/
+//*In The Name Of ALLAH
+//*Bismillahir Rahmanir Rahmin
+//* @Author: Syed Yasir Shahriar
+//     ID   : 19-40656-1
+//     UNI   : AIUB 
+//       DEPT : BSC,CSE
+//{
+//*//*\//\//\//\//\//\//\//\//\//\//\//\//\//\//\//\//\//\*/
 //أعوذ بالله من الشيطان الرجيم
 //بسم الله الرحمن الرحيم
-/*//\//\//\//\//\//\//\//\//\//\//\//\//\//\//\//\//\//\*/
+//*//\//\//\//\//\//\//\//\//\//\//\//\//\//\//\//\//\//\*/
 #include<bits/stdc++.h>
 #define ll long long
 #define ld long double;
@@ -64,12 +64,30 @@ using namespace std;
 int main(){    
 ios::sync_with_stdio(0);
   cin.tie(0),cout.tie(0);
-    
-//   vector<int> prime;
-//   sieve(1e6,prime);
-  int n;
-  cin>>n;
-  cout<<n*5<<endl;   
-         
+
+  int t;
+  cin >> t;
+  while(t--){
+      int n;
+      cin >> n;
+      map<int,int> m1;
+      bool ans = 0;
+      for (int i = 0; i < n;i++){
+          int x;
+          cin >> x;
+          m1[x]++;
+      }
+      for(auto u:m1){
+           if(u.second>=3){
+               ans = 1;
+               cout << u.first << endl;
+               break;
+           }
+      }
+      if(ans==0){
+          cout << "-1" << endl;
+      }
+  }
+
   return 0;
 }

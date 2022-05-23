@@ -65,11 +65,21 @@ int main(){
 ios::sync_with_stdio(0);
   cin.tie(0),cout.tie(0);
     
-//   vector<int> prime;
-//   sieve(1e6,prime);
-  int n;
-  cin>>n;
-  cout<<n*5<<endl;   
+  //vector<int> prime;
+  //sieve(1e6,prime);
+   string str;
+   getline(cin,str);
+   set<char>s1;
+    for(auto u:str){
+         if(u=='{' || u=='}' || u==',' || u==' '){
+              continue;
+         }
+        else{
+            s1.insert(u);
+        }
+    }
+    cout<<s1.size()<<endl;
+     
          
   return 0;
 }

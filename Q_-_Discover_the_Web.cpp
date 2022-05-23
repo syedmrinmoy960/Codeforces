@@ -65,11 +65,89 @@ int main(){
 ios::sync_with_stdio(0);
   cin.tie(0),cout.tie(0);
     
-//   vector<int> prime;
-//   sieve(1e6,prime);
-  int n;
-  cin>>n;
-  cout<<n*5<<endl;   
-         
+  int t;
+    cin>>t;
+    string str,k,current;
+//    current ="http://www.lightoj.com/";
+    stack<string>f;
+    stack<string>b;
+    getline(cin,str);
+    for(int i=1; i<=t; i++)
+    {
+        current ="http://www.lightoj.com/";
+
+      while(!f.empty())
+        {
+
+            f.pop();
+        }
+
+        while(!b.empty())
+        {
+
+            b.pop();
+        }
+
+        cout<<"Case"<<" "<<i<<":"<<endl;
+        while(getline(cin,str))
+        {
+
+            if(str=="QUIT")
+                break;
+
+            if(str=="FORWARD")
+            {
+
+                if(f.empty())
+                {
+
+                    cout<<"Ignored"<<endl;
+                    continue;
+                }
+                b.push(current);
+
+                current=f.top();
+
+                cout<<current<<endl;
+                f.pop();
+            }
+            else if(str=="BACK")
+            {
+
+                if(b.empty())
+                {
+
+                    cout<<"Ignored"<<endl;
+                    continue;
+                }
+                f.push(current);
+
+                current=b.top();
+
+                cout<<current<<endl;
+                b.pop();
+            }
+
+            else
+            {
+
+                b.push(current);
+                string s1;
+                stringstream ss(str);
+                ss>>s1>>s1;
+                current= s1;
+                cout<<current<<endl;
+                while(!f.empty())
+                {
+
+                    f.pop();
+                }
+
+            }
+
+        }
+
+    }
+        
   return 0;
 }

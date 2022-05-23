@@ -19,7 +19,6 @@
 #define pll pair<ll,ll>
 #define vv vector<ll>
 #define st stack<ll>
-#define pq  priority_queue <int>
 #define qq queue<ll>
 #define mod 1e9+7
 const int mix=1e6+10;
@@ -65,11 +64,71 @@ int main(){
 ios::sync_with_stdio(0);
   cin.tie(0),cout.tie(0);
     
-//   vector<int> prime;
-//   sieve(1e6,prime);
-  int n;
-  cin>>n;
-  cout<<n*5<<endl;   
+  int t ;cin>>t;
+  while (t--)
+  {
+      ll n; cin>>n;
+  
+      vector<ll>res;
+      ll sum=0;
+      bool ans=true;
+      for(int i=0;i<n;i++){
+          ll z;cin>>z;
+           res.pb(z);
+           sum+=res[i];
+      }
+       if(n==1){
+            cout<<"YES"<<endl;
+            continue;
+       }
+      map<ll,int>m1;
+      for(int i=0;i<n;i++){
+           m1[res[i]]++;
+      }
+      priority_queue<ll>pq;
+      pq.push(sum);
+
+      while(!pq.empty()){
+           ll x = pq.top();
+           pq.pop();
+           ll a = x/2;
+           ll b = x-a ;
+           if(m1[a]>0){
+              m1[a]--;
+           }
+           else if(m1[a]==0 and a>1){
+                pq.push(a);
+           }
+
+           if(m1[b]>0){
+              m1[b]--;
+           }
+           else if(m1[b]==0 and b>1){
+                pq.push(b);
+           }
+          
+          if(pq.size()>n+2){
+               ans=false;
+               break;
+          }
+
+
+      }
+      for(int i=0;i<n;i++){
+           if(m1[res[i]]>0){
+                ans=false;
+                break;
+           }
+      }
+      if(ans){
+           cout<<"YES"<<endl;
+      }
+      else{
+          cout<<"NO"<<endl;
+      }
+
+  }
+  
          
   return 0;
 }

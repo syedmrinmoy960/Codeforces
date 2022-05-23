@@ -1,14 +1,14 @@
-/*In The Name Of ALLAH
-*Bismillahir Rahmanir Rahmin
-* @Author: Syed Yasir Shahriar
-     ID   : 19-40656-1
-     UNI   : AIUB 
-       DEPT : BSC,CSE
-{
-/*//*\//\//\//\//\//\//\//\//\//\//\//\//\//\//\//\//\//\*/
+//*In The Name Of ALLAH
+//*Bismillahir Rahmanir Rahmin
+//* @Author: Syed Yasir Shahriar
+//     ID   : 19-40656-1
+//     UNI   : AIUB 
+//       DEPT : BSC,CSE
+//{
+//*//*\//\//\//\//\//\//\//\//\//\//\//\//\//\//\//\//\//\*/
 //أعوذ بالله من الشيطان الرجيم
 //بسم الله الرحمن الرحيم
-/*//\//\//\//\//\//\//\//\//\//\//\//\//\//\//\//\//\//\*/
+//*//\//\//\//\//\//\//\//\//\//\//\//\//\//\//\//\//\//\*/
 #include<bits/stdc++.h>
 #define ll long long
 #define ld long double;
@@ -64,12 +64,35 @@ using namespace std;
 int main(){    
 ios::sync_with_stdio(0);
   cin.tie(0),cout.tie(0);
-    
-//   vector<int> prime;
-//   sieve(1e6,prime);
-  int n;
-  cin>>n;
-  cout<<n*5<<endl;   
-         
+
+  int t;
+  cin >> t;
+  while(t--){
+      int n,cnt=0;
+      cin >> n;
+      string str;
+      cin >> str;
+      string res = str;
+      reverse(res.begin(), res.end());
+      if(str==res){
+          cout << "0" << endl;
+          continue;
+      }
+      else{
+
+      
+      for (int i = 0; i < res.length();i++){
+         res.erase(i, 1);
+         if(str==res){
+             cnt++;
+         }
+         else{
+             res.erase(i, 1);
+         }
+      }
+
+      }
+  }
+
   return 0;
 }

@@ -1,14 +1,14 @@
-/*In The Name Of ALLAH
-*Bismillahir Rahmanir Rahmin
-* @Author: Syed Yasir Shahriar
-     ID   : 19-40656-1
-     UNI   : AIUB 
-       DEPT : BSC,CSE
-{
-/*//*\//\//\//\//\//\//\//\//\//\//\//\//\//\//\//\//\//\*/
+//*In The Name Of ALLAH
+//*Bismillahir Rahmanir Rahmin
+//* @Author: Syed Yasir Shahriar
+//     ID   : 19-40656-1
+//     UNI   : AIUB 
+//       DEPT : BSC,CSE
+//{
+//*//*\//\//\//\//\//\//\//\//\//\//\//\//\//\//\//\//\//\*/
 //أعوذ بالله من الشيطان الرجيم
 //بسم الله الرحمن الرحيم
-/*//\//\//\//\//\//\//\//\//\//\//\//\//\//\//\//\//\//\*/
+//*//\//\//\//\//\//\//\//\//\//\//\//\//\//\//\//\//\//\*/
 #include<bits/stdc++.h>
 #define ll long long
 #define ld long double;
@@ -64,12 +64,47 @@ using namespace std;
 int main(){    
 ios::sync_with_stdio(0);
   cin.tie(0),cout.tie(0);
-    
-//   vector<int> prime;
-//   sieve(1e6,prime);
-  int n;
-  cin>>n;
-  cout<<n*5<<endl;   
-         
+
+  int t;
+  cin >> t;
+  while(t--){
+      int n;
+      cin >> n;
+      vector<int> v1;
+      for (int i = 0; i < n;i++){
+          int x;
+          cin >> x;
+          v1.pb(x);
+      }
+      int ee = 0, eo = 0, oe = 0, oo = 0;
+      for (int i = 0; i < n;i++){
+           if(i%2==0){
+                if(v1[i]%2==0){
+                    ee++;
+                }
+                else{
+                    eo++;
+                }
+           }
+           else{
+               if(v1[i]%2==0){
+                   oe++;
+               }
+               else{
+                   oo++;
+               }
+           }
+      }
+      if(ee!=0 && eo!=0){
+          cout << "NO" << endl;
+      }
+      else if(oe!=0 && oo!=0){
+          cout << "NO" << endl;
+      }
+      else{
+          cout << "YES" << endl;
+      }
+  }
+
   return 0;
 }

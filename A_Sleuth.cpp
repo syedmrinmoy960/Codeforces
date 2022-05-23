@@ -41,35 +41,53 @@ using namespace std;
 // int const mx = 1e6 + 1;
 // bitset<mx> vis;
 // sieve function :
-//  vector<bool>vis(1e6+1);
-// void sieve(int n,vector<int>&prime){
-//        // vector<bool>vis(n+1);
-//      for(int i=3;1ll*i*i<=n;i+=2){
-//          if(!vis[i]){
-//             for(int j=i*i;j<=n;j+=(i<<1)){
-//                 if(!vis[j]){
-//                     vis[j]=1; 
-//                 }
-//             }
-//          }
-//      }
-//      //prime.pb(2);
-//      for(int i=3;i<=n;i+=2){
+//   vector<bool>vis(1e6+1);
+//  void sieve(int n,vector<int>&prime){
+//         // vector<bool>vis(n+1);
+//       for(int i=3;1ll*i*i<=n;i+=2){
+//           if(!vis[i]){
+//              for(int j=i*i;j<=n;j+=(i<<1)){
+//                  if(!vis[j]){
+//                      vis[j]=1; 
+//                  }
+//              }
+//           }
+//       }
+//       //prime.pb(2);
+//       for(int i=3;i<=n;i+=2){
 //          if(!vis[i]){
 //              prime.pb(i);
-//          }
-//      }
+//           }
+//       }
 // }
+string str;
 
 int main(){    
 ios::sync_with_stdio(0);
   cin.tie(0),cout.tie(0);
     
-//   vector<int> prime;
-//   sieve(1e6,prime);
-  int n;
-  cin>>n;
-  cout<<n*5<<endl;   
+   getline(cin,str);
+   int n=str.length();
+   for(int i=n-1;i>=0;i--){
+      if(str.length()=='?') continue;
+      if(str.length()-1==' ') continue;
+      if((str[i]>='A' && str[i]<='Z')||(str[i]>='a' && str[i]<='z')){
+         if((str[i]=='A'||str[i]=='E' || str[i]=='I' || str[i]=='O' || str[i]=='U' || str[i]=='Y')||(str[i]=='a'||str[i]=='e' || str[i]=='i' || str[i]=='o' || str[i]=='u' || str[i]=='y')){
+            cout<<"YES"<<endl;
+            return 0;
+         }
+         else{
+            cout<<"NO"<<endl;
+            return 0;
+         }
+      }
+   
+     
+   }
+      cout<<"NO"<<endl;
+   
+
+     
          
   return 0;
 }

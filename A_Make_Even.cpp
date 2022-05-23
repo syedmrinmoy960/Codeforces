@@ -64,35 +64,28 @@ using namespace std;
 int main(){    
 ios::sync_with_stdio(0);
   cin.tie(0),cout.tie(0);
-    
-  //vector<int> prime;
-  //sieve(1e6,prime);
-  int t;
-  cin >> t;
-  while(t--){
+   int t;
+   cin>>t;
+   while(t--){
+    int n,cnt=0;
+    cin>>n;
     string str;
-    cin >> str;
-    int cnt = 0;
-    for (int i = 0; i < str.length();i++){
-      int x = str[i] - '0';
-      if(x%2==0){
-        cnt++;
+    str =to_string(n);
+    // cout<<str<<endl;
+    // cout<<str.length()<<endl;
+     if(n%2==0 && str.length()==1){
+          cout<<"-1"<<endl;
+     } 
+      else if(n%2!=0){
+           for(auto u:str){
+                if(u=='0' &&  u=='2' && u=='4' &&u=='6' && u=='8'){
+                     cnt++;
+                }
+           }
+          cout<<str.length()-cnt<<endl;
       }
-    }
-    if(cnt==0){
-      cout << "-1" << endl;
-    }
-     else{
-       int a = str[str.length() - 1] - '0';
-       int b = str[0] - '0';
-       if(a%2==0)
-         cout << "0" << endl;
-         else if(b%2==0)
-           cout << "1" << endl;
-           else
-             cout << "2" << endl;
-     }
-  }
-
+   }
+     
+         
   return 0;
 }

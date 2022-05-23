@@ -65,11 +65,29 @@ int main(){
 ios::sync_with_stdio(0);
   cin.tie(0),cout.tie(0);
     
-//   vector<int> prime;
-//   sieve(1e6,prime);
-  int n;
-  cin>>n;
-  cout<<n*5<<endl;   
+  //vector<int> prime;
+  //sieve(1e6,prime);
+  int t;cin>>t;
+  cin.get();
+  while(t--){
+       string str;
+       getline(cin,str);
+       map<string,string>p1;
+        stringstream ss(str);
+        string s1,s2;
+        ss>>s1>>s2;
+        p1[s2]=s1;
+         int res=0;
+        for(int i=0;i<s2.length();i++){
+             res+=s2[i]-'0';
+        }
+    //    if(res%2==0){
+            
+    //    }
+       
+     
+  }
+     
          
   return 0;
 }

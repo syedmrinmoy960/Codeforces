@@ -24,7 +24,7 @@
 #define mod 1e9+7
 const int mix=1e6+10;
 //const ld pii=acos(-1.0);
-ll arr[mix];
+ll ar[mix];
 // vector<int>divisors[mx];
 // int ans=__builtin_popcount(n);
 //ith bit on =(n|(1<<i))
@@ -65,11 +65,50 @@ int main(){
 ios::sync_with_stdio(0);
   cin.tie(0),cout.tie(0);
     
-//   vector<int> prime;
-//   sieve(1e6,prime);
-  int n;
-  cin>>n;
-  cout<<n*5<<endl;   
+  //vector<int> prime;
+  //sieve(1e6,prime);
+
+    int t;cin>>t;
+
+    while(t--){
+         int n;cin>>n;
+         priority_queue<pair<int,int>>p1;
          
+         p1.push({n,-1});
+          int cnt=1;
+          while(!p1.empty()){
+
+               int l=p1.top().second*-1;
+               int ln=p1.top().first;
+               p1.pop();
+
+               int r=l+ln-1;
+               int mid=0;
+               if(ln%2==0){
+                    mid=(l+r-1)/2;
+               }
+               else{
+                   mid=(l+r)/2;
+               }
+               ar[mid]=cnt;
+               cnt++;
+               int l1,r1,l2,r2;
+               l1=mid+1;
+               r1=mid-1;
+               l2=l;
+               r2=r;
+               if(l1<=r1){
+                    p1.push({r1-l1+1,-l1});
+               }
+               if ( l2 <= r2 ) {
+                p1.push ( { r2-l2+1, -l2 } );
+            }
+           for(int i=1;i<=n;i++){
+                cout<<ar[i]<<" ";
+
+           }
+           cout<<endl;
+          }
+    }  
   return 0;
 }

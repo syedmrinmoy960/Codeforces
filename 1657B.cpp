@@ -65,11 +65,26 @@ int main(){
 ios::sync_with_stdio(0);
   cin.tie(0),cout.tie(0);
     
-//   vector<int> prime;
-//   sieve(1e6,prime);
-  int n;
-  cin>>n;
-  cout<<n*5<<endl;   
+   int t; cin>>t;
+   while(t--){
+         int n,b,x,y;
+         cin>>n>>b>>x>>y; 
+        ll ar[n+1];
+        ar[0]=0;
+        ll ans=0;
+        for(int i=1;i<=n;i++){
+             if(ar[i-1]+x<=b){
+                  ar[i]=ar[i-1]+x;
+                 
+             }
+             else{
+                 ar[i]=ar[i-1]-y;
+             }
+             ans+=ar[i];
+        }
+        cout<<ans<<endl;
+   }
+     
          
   return 0;
 }

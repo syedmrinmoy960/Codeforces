@@ -64,12 +64,38 @@ using namespace std;
 int main(){    
 ios::sync_with_stdio(0);
   cin.tie(0),cout.tie(0);
-    
-//   vector<int> prime;
-//   sieve(1e6,prime);
-  int n;
-  cin>>n;
-  cout<<n*5<<endl;   
+     
+     int t;cin>>t;
+     while (t--){
+          int n,m;cin>>n>>m;
+          vector<int>v1;
+            vector<int>v2;
+            for(int i=0;i<n;i++){
+                 int x;cin>>x;
+                 v1.pb(x);
+            }
+             for(int i=0;i<m;i++){
+                 int y;cin>>y;
+                 v2.pb(y);
+            }
+            set<int>s1;
+            set<int>s2;
+            for(int i=0;i<n;i++){
+                 s1.insert(v1[i]);
+            }
+            for(int j=0;j<m;j++){
+                 s2.insert(v2[j]);
+            }
+            int res=(n-s1.size());
+            int res2=(m-s2.size());
+            int mx=max(res,res2);
+            cout<<mx<<endl;
+
+
+     }
+ 
+     
+     
          
   return 0;
 }

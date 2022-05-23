@@ -1,79 +1,99 @@
-/*
+/*In The Name Of ALLAH
 *Bismillahir Rahmanir Rahmin
-* @Author: {{Syed Yasir Shahriar
+* @Author: Syed Yasir Shahriar
+     ID   : 19-40656-1
+     UNI   : AIUB 
+       DEPT : BSC,CSE
 {
 /*//*\//\//\//\//\//\//\//\//\//\//\//\//\//\//\//\//\//\*/
-
 //أعوذ بالله من الشيطان الرجيم
 //بسم الله الرحمن الرحيم
- 
 /*//\//\//\//\//\//\//\//\//\//\//\//\//\//\//\//\//\//\*/
 #include<bits/stdc++.h>
 #define ll long long
+#define ld long double;
 #define pb push_back
 #define ff first
 #define ss second
+#define endl "\n"
 #define pll pair<ll,ll>
-#define v vector<ll>
+#define vv vector<ll>
 #define st stack<ll>
 #define pq  priority_queue <int>
-#define q queue<ll>
-#define mod 1000000005
-ll arr[1000005];
+#define qq queue<ll>
+#define mod 1e9+7
+const int mix=1e6+10;
+//const ld pii=acos(-1.0);
+ll arr[mix];
+int mx[1000005];
+// vector<int>divisors[mx];
 // int ans=__builtin_popcount(n);
 //ith bit on =(n|(1<<i))
 //check ith bit=(n&(1<<i))
-using namespace std;
+using namespace std;   
+// ll gcd(ll a,ll b){
+//     if(b==0)
+//       return a;
+//       else
+//         return gcd(b,a%b);
+// }
 
+// sieve function :
+// int const mx = 1e6 + 1;
+// bitset<mx> vis;
+// sieve function :
+//  vector<bool>vis(1e6+1);
+// void sieve(int n,vector<int>&prime){
+//        // vector<bool>vis(n+1);
+//      for(int i=3;1ll*i*i<=n;i+=2){
+//          if(!vis[i]){
+//             for(int j=i*i;j<=n;j+=(i<<1)){
+//                 if(!vis[j]){
+//                     vis[j]=1; 
+//                 }
+//             }
+//          }
+//      }
+//      //prime.pb(2);
+//      for(int i=3;i<=n;i+=2){
+//          if(!vis[i]){
+//              prime.pb(i);
+//          }
+//      }
+// }
 
-int main(){
+int main(){    
+ios::sync_with_stdio(0);
+  cin.tie(0),cout.tie(0);
+    
+   int n; cin>>n;
+   priority_queue<int>p1;
+//    for(int i=0;i<n;i++){
+//         cin>>mx[i];
+//    }
+   for(int i=0;i<n;i++){
+         int x; cin>>x;
+        p1.push(x);
 
- ios::sync_with_stdio(0);
-   cin.tie(0),cout.tie(0);
-//cout<<setprecision(6)<<fixed;
-     int n;
-     cin>>n;
+        if(p1.size()>=3){
+            int a=p1.top();
+            p1.pop();
+            int b =p1.top();
+            p1.pop();
+            int c=p1.top();
+            p1.pop();
+            int ans=(1ll*a*b*c);
+            cout<<ans<<endl;
+            p1.push(a);
+              p1.push(b);
+                p1.push(c);
+        }
+        else{
+            cout<<"-1"<<endl;
+        }
 
-     priority_queue<ll>ans;
-     vector<ll>v1;
-
-      for(int i=0;i<n;i++){
-           ll x;
-           cin>>x;
-           v1.pb(x);
-         
-      }
-
-    //  while(!ans.empty()){
-    //       cout<<ans.top()<<endl;
-    //       ans.pop();
-    //  }
-
-      for(int i=0;i<n;i++){
-            ans.push(v1[i]);
-          if(ans.size()>=3){
-              ll n1=ans.top();
-              ans.pop();
-              ll n2=ans.top();
-              ans.pop();
-              ll n3=ans.top();
-              ans.pop();
-
-              cout<<(n1*n2*n3)<<endl;
-
-              ans.push(n1);
-               ans.push(n2);
-                ans.push(n3);
-
-
-          }
-          else{
-              cout<<"-1"<<endl;
-          }
-      }
-
-
-      
+   }
      
-     return 0;
+         
+  return 0;
 }
